@@ -6,17 +6,13 @@
 		with a big number of developers with different skill levels.]]></description>
     <options>
       <option key="bitwise">
-        <description><![CDATA[
-						<p>This option prohibits the use of bitwise operators such as <code>^</code> (XOR),
+        <description><![CDATA[This option prohibits the use of bitwise operators such as <code>^</code> (XOR),
 						<code>|</code> (OR) and others. Bitwise operators are very rare in JavaScript programs
-						and very often <code>&amp;</code> is simply a mistyped <code>&amp;&amp;</code>.</p>
-					]]></description>
+						and very often <code>&amp;</code> is simply a mistyped <code>&amp;&amp;</code>.]]></description>
       </option>
       <option key="camelcase">
-        <description><![CDATA[
-						<p>This option allows you to force all variable names to use either camelCase
-						style or UPPER_CASE with underscores.</p>
-					]]></description>
+        <description><![CDATA[This option allows you to force all variable names to use either camelCase
+						style or UPPER_CASE with underscores.]]></description>
       </option>
       <option key="curly">
         <description><![CDATA[
@@ -66,12 +62,10 @@ if (obj.hasOwnProperty(key)) {
 					]]></description>
       </option>
       <option key="immed">
-        <description><![CDATA[
-						<p>This option prohibits the use of immediate function invocations without wrapping
+        <description><![CDATA[This option prohibits the use of immediate function invocations without wrapping
 						them in parentheses. Wrapping parentheses assists readers of your code in
 						understanding that the expression is the result of a function, and not the function
-						itself.</p>
-					]]></description>
+						itself.]]></description>
       </option>
       <option key="indent">
         <description><![CDATA[
@@ -124,20 +118,16 @@ MyConstructor();     // - [DOMWindow]
 					]]></description>
       </option>
       <option key="noarg">
-        <description><![CDATA[
-						<p>This option prohibits the use of <code>arguments.caller</code> and
+        <description><![CDATA[This option prohibits the use of <code>arguments.caller</code> and
 						<code>arguments.callee</code>. Both <code>.caller</code> and <code>.callee</code>
 						make quite a few optimizations impossible so they were deprecated in
 						future versions of JavaScript. In fact, EcmaScript 5 forbids the use of
-						<code>arguments.callee</code> in strict mode.</p>
-					]]></description>
+						<code>arguments.callee</code> in strict mode.]]></description>
       </option>
       <option key="noempty">
-        <description><![CDATA[
-						<p>This option warns when you have an empty block in your code. JSLint was
+        <description><![CDATA[This option warns when you have an empty block in your code. JSLint was
 					originally warning for all empty blocks and we simply made it optional. There were
-					no studies reporting that empty blocks in JavaScript break your code in any way.</p>
-					]]></description>
+					no studies reporting that empty blocks in JavaScript break your code in any way.]]></description>
       </option>
       <option key="nonew">
         <description><![CDATA[
@@ -151,22 +141,20 @@ MyConstructor();     // - [DOMWindow]
 					]]></description>
       </option>
       <option key="plusplus">
-        <description><![CDATA[<p>This option prohibits the use of unary increment and decrement operators. Some
+        <description><![CDATA[This option prohibits the use of unary increment and decrement operators. Some
 					people think that <code>++</code> and <code>--</code> reduces the quality of their
 					coding styles and there are programming languages—such as Python—that
-					go completely without these operators.</p>]]></description>
+					go completely without these operators.]]></description>
       </option>
       <option key="quotmark">
-        <description><![CDATA[<p>This option enforces the consistency of quotation marks used throughout your
+        <description><![CDATA[This option enforces the consistency of quotation marks used throughout your
 					code. It accepts three values: <code>true</code> if you don't want to enforce one
 					particular style but want some consistency, <code>"single"</code> if you want to
 					allow only single quotes and <code>"double"</code> if you want to allow only double
-					quotes.</p>]]></description>
+					quotes.]]></description>
       </option>
       <option key="regexp">
-        <description><![CDATA[
-						<p>This option prohibits the use of unsafe <code>.</code> in regular expressions.</p>
-					]]></description>
+        <description><![CDATA[This option prohibits the use of unsafe <code>.</code> in regular expressions.]]></description>
       </option>
       <option key="undef">
         <description><![CDATA[
@@ -296,18 +284,14 @@ return j; // JSHint: Too many statements per function. (5)
 					]]></description>
       </option>
       <option key="maxcomplexity">
-        <description><![CDATA[
-						<p>This option lets you control cyclomatic complexity throughout your code. Cyclomatic
+        <description><![CDATA[This option lets you control cyclomatic complexity throughout your code. Cyclomatic
 						complexity measures the number of linearly independent paths through a program's
 						source code. Read more about
 						<a href="http://en.wikipedia.org/wiki/Cyclomatic_complexity">cyclomatic complexity on
-							Wikipedia</a>.</p>
-					]]></description>
+							Wikipedia</a>.]]></description>
       </option>
       <option key="maxlen">
-        <description><![CDATA[
-						<p>This option lets you set the maximum length of a line.</p>
-					]]></description>
+        <description><![CDATA[This option lets you set the maximum length of a line.]]></description>
       </option>
     </options>
   </group>
@@ -338,13 +322,13 @@ return j; // JSHint: Too many statements per function. (5)
 					]]></description>
       </option>
       <option key="debug">
-        <description><![CDATA[<p>This option suppresses warnings about the <code>debugger</code> statements in
-					your code.</p>]]></description>
+        <description><![CDATA[This option suppresses warnings about the <code>debugger</code> statements in
+					your code.]]></description>
       </option>
       <option key="eqnull">
-        <description><![CDATA[<p>This option suppresses warnings about <code>== null</code> comparisons. Such
+        <description><![CDATA[This option suppresses warnings about <code>== null</code> comparisons. Such
 					comparisons are often useful when you want to check if a variable is <code>null</code>
-					<strong>or</strong> <code>undefined</code>.</p>]]></description>
+					<strong>or</strong> <code>undefined</code>.]]></description>
       </option>
       <option key="es5">
         <description><![CDATA[
@@ -373,20 +357,16 @@ return j; // JSHint: Too many statements per function. (5)
 					]]></description>
       </option>
       <option key="evil">
-        <description><![CDATA[
-						<p>This option suppresses warnings about the use of <code>eval</code>. The use of
+        <description><![CDATA[This option suppresses warnings about the use of <code>eval</code>. The use of
 						<code>eval</code> is discouraged because it can make your code vulnerable to
 						various injection attacks and it makes it hard for JavaScript interpreter to
-						do certain optimizations.</p>
-					]]></description>
+						do certain optimizations.]]></description>
       </option>
       <option key="expr">
-        <description><![CDATA[
-						<p>This option suppresses warnings about the use of expressions where normally
+        <description><![CDATA[This option suppresses warnings about the use of expressions where normally
 						you would expect to see assignments or function calls. Most of the time, such
 						code is a typo. However, it is not forbidden by the spec and that's why
-						this warning is optional.</p>
-					]]></description>
+						this warning is optional.]]></description>
       </option>
       <option key="funcscope">
         <description><![CDATA[
@@ -417,10 +397,8 @@ x += 1; // Default: 'x' used out of scope.
 					]]></description>
       </option>
       <option key="iterator">
-        <description><![CDATA[
-						<p>This option suppresses warnings about the <code>__iterator__</code> property.
-						This property is not supported by all browsers so use it carefully.</p>
-					]]></description>
+        <description><![CDATA[This option suppresses warnings about the <code>__iterator__</code> property.
+						This property is not supported by all browsers so use it carefully.]]></description>
       </option>
       <option key="lastsemic">
         <description><![CDATA[
@@ -432,11 +410,9 @@ x += 1; // Default: 'x' used out of scope.
 					]]></description>
       </option>
       <option key="laxbreak">
-        <description><![CDATA[
-						<p>This option suppresses most of the warnings about possibly unsafe line breakings in
+        <description><![CDATA[This option suppresses most of the warnings about possibly unsafe line breakings in
 						your code. It doesn't suppress warnings about comma-first coding style. To suppress
-						those you have to use <code>laxcomma</code> (see below).</p>
-					]]></description>
+						those you have to use <code>laxcomma</code> (see below).]]></description>
       </option>
       <option key="laxcomma">
         <description><![CDATA[
@@ -498,47 +474,35 @@ World"; // Warning, there is a space after \ (colored pink)</pre>
                 ]]></description>
       </option>
       <option key="onecase">
-        <description><![CDATA[
-						<p>This option suppresses warnings about switches with just one case. Most
+        <description><![CDATA[This option suppresses warnings about switches with just one case. Most
 						of the time you want to use <code>if</code> instead of <code>switch</code> if
 						there is only one case. However, some code generators prefer to generate
-						<code>switch</code> statements.</p>
-					]]></description>
+						<code>switch</code> statements.]]></description>
       </option>
       <option key="proto">
-        <description><![CDATA[<p>This option suppresses warnings about the <code>__proto__</code> property.
-						This property is deprecated and not supported by all browsers.</p>]]></description>
+        <description><![CDATA[This option suppresses warnings about the <code>__proto__</code> property.
+						This property is deprecated and not supported by all browsers.]]></description>
       </option>
       <option key="regexdash">
-        <description><![CDATA[
-						<p>This option suppresses warnings about unescaped <code>-</code> in the end
-						of regular expressions.</p>
-					]]></description>
+        <description><![CDATA[This option suppresses warnings about unescaped <code>-</code> in the end
+						of regular expressions.]]></description>
       </option>
       <option key="scripturl">
-        <description><![CDATA[
-						<p>This option suppresses warnings about the use of script-targeted
-						URLs—such as <code>javascript:...</code>.</p>
-					]]></description>
+        <description><![CDATA[This option suppresses warnings about the use of script-targeted
+						URLs—such as <code>javascript:...</code>.]]></description>
       </option>
       <option key="smarttabs">
-        <description><![CDATA[
-						<p>This option suppresses warnings about mixed tabs and spaces when the latter are
+        <description><![CDATA[This option suppresses warnings about mixed tabs and spaces when the latter are
 						used for alignmnent only. The technique is called
-						<a href="http://www.emacswiki.org/emacs/SmartTabs">SmartTabs</a>.</p>
-					]]></description>
+						<a href="http://www.emacswiki.org/emacs/SmartTabs">SmartTabs</a>.]]></description>
       </option>
       <option key="shadow">
-        <description><![CDATA[
-						<p>This option suppresses warnings about variable shadowing i.e. declaring a
-						variable that had been already declared somewhere in the outer scope.</p>
-					]]></description>
+        <description><![CDATA[This option suppresses warnings about variable shadowing i.e. declaring a
+						variable that had been already declared somewhere in the outer scope.]]></description>
       </option>
       <option key="sub">
-        <description><![CDATA[
-						<p>This option suppresses warnings about using [] notation when it can be expressed
-						in dot notation: <code>person['name']</code> vs. <code>person.name</code>.</p>
-					]]></description>
+        <description><![CDATA[This option suppresses warnings about using [] notation when it can be expressed
+						in dot notation: <code>person['name']</code> vs. <code>person.name</code>.]]></description>
       </option>
       <option key="supernew">
         <description><![CDATA[
@@ -587,63 +551,59 @@ this.publicMethod2 = function () {}
 					]]></description>
       </option>
       <option key="couch">
-        <description><![CDATA[<p>This option defines globals exposed by CouchDB.
+        <description><![CDATA[This option defines globals exposed by CouchDB.
 					<a href="http://couchdb.apache.org/">CouchDB</a> is a document-oriented database
-					that can be queried and indexed in a MapReduce fashion using JavaScript.</p>]]></description>
+					that can be queried and indexed in a MapReduce fashion using JavaScript.]]></description>
       </option>
       <option key="devel">
-        <description><![CDATA[
-						<p>This option defines globals that are usually used for logging poor-man's
+        <description><![CDATA[This option defines globals that are usually used for logging poor-man's
 						debugging: <code>console</code>, <code>alert</code>, etc. It is usually a good idea
 						to not ship them in production because, for example, <code>console.log</code>
-						breaks in legacy versions of Internet Explorer.</p>
-					]]></description>
+						breaks in legacy versions of Internet Explorer.]]></description>
       </option>
       <option key="dojo">
-        <description><![CDATA[<p>This option defines globals exposed by the
-						<a href="http://dojotoolkit.org/">Dojo Toolkit</a>.</p>]]></description>
+        <description><![CDATA[This option defines globals exposed by the
+						<a href="http://dojotoolkit.org/">Dojo Toolkit</a>.]]></description>
       </option>
       <option key="jquery">
-        <description><![CDATA[<p>This option defines globals exposed by the
-						<a href="http://jquery.com/">jQuery</a> JavaScript library.</p>]]></description>
+        <description><![CDATA[This option defines globals exposed by the
+						<a href="http://jquery.com/">jQuery</a> JavaScript library.]]></description>
       </option>
       <option key="mootools">
-        <description><![CDATA[<p>This option defines globals exposed by the
-						<a href="http://mootools.net/">MooTools</a> JavaScript framework.</p>]]></description>
+        <description><![CDATA[This option defines globals exposed by the
+						<a href="http://mootools.net/">MooTools</a> JavaScript framework.]]></description>
       </option>
       <option key="node">
-        <description><![CDATA[<p>This option defines globals available when your code is running inside of
+        <description><![CDATA[This option defines globals available when your code is running inside of
 					the Node runtime environment. <a href="http://nodejs.org/">Node.js</a> is a server-side
-					JavaScript environment that uses an asynchronous event-driven model.</p>]]></description>
+					JavaScript environment that uses an asynchronous event-driven model.]]></description>
       </option>
       <option key="nonstandard">
-        <description><![CDATA[<p>This option defines non-standard but widely adopted globals such as
-					<code>escape</code> and <code>unescape</code>.</p>]]></description>
+        <description><![CDATA[This option defines non-standard but widely adopted globals such as
+					<code>escape</code> and <code>unescape</code>.]]></description>
       </option>
       <option key="prototypejs">
-        <description><![CDATA[<p>This option defines globals exposed by the
-						<a href="http://www.prototypejs.org/">Prototype</a> JavaScript framework.</p>
-					]]></description>
+        <description><![CDATA[This option defines globals exposed by the
+						<a href="http://www.prototypejs.org/">Prototype</a> JavaScript framework.]]></description>
       </option>
       <option key="rhino">
-        <description><![CDATA[<p>This option defines globals available when your code is running inside of
+        <description><![CDATA[This option defines globals available when your code is running inside of
 					the Rhino runtime environment. <a href="http://www.mozilla.org/rhino/">Rhino</a> is an
-					open-source implementation of JavaScript written entirely in Java.</p>]]></description>
+					open-source implementation of JavaScript written entirely in Java.]]></description>
       </option>
       <option key="worker">
-        <description><![CDATA[<p>This option defines globals available when your code is running inside of
+        <description><![CDATA[This option defines globals available when your code is running inside of
 						a Web Worker. <a href="https://developer.mozilla.org/en/Using_web_workers">Web Workers</a>
-						provide a simple means for web content to run scripts in background threads.</p>
-					]]></description>
+						provide a simple means for web content to run scripts in background threads.]]></description>
       </option>
       <option key="wsh">
-        <description><![CDATA[<p>This option defines globals available when your code is running as a script
+        <description><![CDATA[This option defines globals available when your code is running as a script
 					for the <a href="http://en.wikipedia.org/wiki/Windows_Script_Host">Windows Script
-					Host</a>.</p>]]></description>
+					Host</a>.]]></description>
       </option>
       <option key="yui">
-        <description><![CDATA[<p>This option defines globals exposed by the
-						<a href="http://yuilibrary.com/">YUI</a> JavaScript framework.</p>]]></description>
+        <description><![CDATA[This option defines globals exposed by the
+						<a href="http://yuilibrary.com/">YUI</a> JavaScript framework.]]></description>
       </option>
     </options>
   </group>
@@ -652,9 +612,8 @@ this.publicMethod2 = function () {}
 		improved in any way and might be removed at any point.]]></description>
     <options>
       <option key="nomen">
-        <description><![CDATA[
-						<p>This option disallows the use of dangling <code>_</code> in variables.
-						We don't know why would you need it.</p>]]></description>
+        <description><![CDATA[This option disallows the use of dangling <code>_</code> in variables.
+						We don't know why would you need it.]]></description>
       </option>
       <option key="onevar">
         <description><![CDATA[
@@ -678,14 +637,12 @@ indent += option.indent;
 					]]></description>
       </option>
       <option key="passfail">
-        <description><![CDATA[<p>This option makes JSHint stop on the first error or warning.</p>]]></description>
+        <description><![CDATA[This option makes JSHint stop on the first error or warning.]]></description>
       </option>
       <option key="white">
-        <description><![CDATA[
-						<p>This option make JSHint check your source code against Douglas Crockford's
+        <description><![CDATA[This option make JSHint check your source code against Douglas Crockford's
 						JavaScript coding style. Unfortunately, his “The Good Parts” book aside,
-						the actual rules are not very well documented.</p>
-					]]></description>
+						the actual rules are not very well documented.]]></description>
       </option>
     </options>
   </group>

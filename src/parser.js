@@ -110,6 +110,14 @@ function replaceHtmlEntities(html) {
     return html.split('&nbsp;').join('&#x00A0;');
 }
 
+function buildOptionDocHtmlString(optionName, tdDoc) {
+    var pDoc = tdDoc.children('p');
+    if (pDoc.length === tdDoc.children().length && pDoc.length === 1) {
+        return pDoc.html();
+    }
+    return tdDoc.html();
+}
+
 function parse(body) {
     jsdom.env({
         html: body,
@@ -124,7 +132,8 @@ function parse(body) {
                 p.next("table.zebra-striped").children("tbody").children("tr").each(function() {
                     var tdElement = $(this);
                     var optionName = tdElement.children("td.name").children("code").first().text();
-                    var optionDescription = tdElement.children("td[class!=name]").html();
+                    var tdDoc = tdElement.children("td[class!=name]");
+                    var optionDescription = buildOptionDocHtmlString(optionName, tdDoc);
                     group.addOption(optionName, optionDescription);
                 });
                 groups.push(group);
