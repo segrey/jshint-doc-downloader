@@ -1,0 +1,10 @@
+{
+    "name": "jshint-doc-downloader",
+    "preferGlobal": "false",
+    "version": "0.0.1",
+    "dependencies": {
+        "request": "*",
+        "jsdom": "*",
+        "jade": "*"
+    }
+}

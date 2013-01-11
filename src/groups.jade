@@ -1,0 +1,11 @@
+!!! xml
+groups
+  each group in groups
+    group(title='#{group.title}')
+      description.
+        <![CDATA[!{group.description}]]>
+      options
+        each val, key in group.options
+          option(key='#{key}')
+            description.
+              <![CDATA[!{val}]]>
