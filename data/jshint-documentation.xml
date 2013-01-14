@@ -424,94 +424,60 @@
     World"; // Warning, no escape character.
 
     text = "Hello\<span style="background-color: hotpink;">&nbsp;</span>
-    World"; // Warning, there is a space after \ (colored pink)</pre>
-
-    				<tr>
-    					<td class="name"><a name="onecase"><code>onecase</code></a></td>
-    					<td>
-    						<p>This option suppresses warnings about switches with just one case. Most
+    World"; // Warning, there is a space after \ (colored pink)</pre>]]></description>
+      </option>
+      <option key="onecase">
+        <description><![CDATA[This option suppresses warnings about switches with just one case. Most
     						of the time you want to use <code>if</code> instead of <code>switch</code> if
     						there is only one case. However, some code generators prefer to generate
-    						<code>switch</code> statements.</p>
-    					</td>
-    				</tr>
-
-    				<tr>
-    					<td class="name"><a name="proto"><code>proto</code></a></td>
-    					<td><p>This option suppresses warnings about the <code>__proto__</code> property.
-    						This property is deprecated and not supported by all browsers.</p></td>
-    				</tr>
-
-    				<tr>
-    					<td class="name"><a name="regexdash"><code>regexdash</code></a></td>
-    					<td>
-    						<p>This option suppresses warnings about unescaped <code>-</code> in the end
-    						of regular expressions.</p>
-    					</td>
-    				</tr>
-
-    				<tr>
-    					<td class="name"><a name="scripturl"><code>scripturl</code></a></td>
-    					<td>
-    						<p>This option suppresses warnings about the use of script-targeted
-    						URLs—such as <code>javascript:...</code>.</p>
-    					</td>
-    				</tr>
-
-    				<tr>
-    					<td class="name"><a name="smarttabs"><code>smarttabs</code></a></td>
-    					<td>
-    						<p>This option suppresses warnings about mixed tabs and spaces when the latter are
+    						<code>switch</code> statements.]]></description>
+      </option>
+      <option key="proto">
+        <description><![CDATA[This option suppresses warnings about the <code>__proto__</code> property.
+    						This property is deprecated and not supported by all browsers.]]></description>
+      </option>
+      <option key="regexdash">
+        <description><![CDATA[This option suppresses warnings about unescaped <code>-</code> in the end
+    						of regular expressions.]]></description>
+      </option>
+      <option key="scripturl">
+        <description><![CDATA[This option suppresses warnings about the use of script-targeted
+    						URLs—such as <code>javascript:...</code>.]]></description>
+      </option>
+      <option key="smarttabs">
+        <description><![CDATA[This option suppresses warnings about mixed tabs and spaces when the latter are
     						used for alignmnent only. The technique is called
-    						<a href="http://www.emacswiki.org/emacs/SmartTabs">SmartTabs</a>.</p>
-    					</td>
-    				</tr>
-
-    				<tr>
-    					<td class="name"><a name="shadow"><code>shadow</code></a></td>
-    					<td>
-    						<p>This option suppresses warnings about variable shadowing i.e. declaring a
-    						variable that had been already declared somewhere in the outer scope.</p>
-    					</td>
-    				</tr>
-
-    				<tr>
-    					<td class="name"><a name="sub"><code>sub</code></a></td>
-    					<td>
-    						<p>This option suppresses warnings about using [] notation when it can be expressed
-    						in dot notation: <code>person['name']</code> vs. <code>person.name</code>.</p>
-    					</td>
-    				</tr>
-
-    				<tr>
-    					<td class="name"><a name="supernew"><code>supernew</code></a></td>
-    					<td>
-    						<p>This option suppresses warnings about "weird" constructions like
+    						<a href="http://www.emacswiki.org/emacs/SmartTabs">SmartTabs</a>.]]></description>
+      </option>
+      <option key="shadow">
+        <description><![CDATA[This option suppresses warnings about variable shadowing i.e. declaring a
+    						variable that had been already declared somewhere in the outer scope.]]></description>
+      </option>
+      <option key="sub">
+        <description><![CDATA[This option suppresses warnings about using [] notation when it can be expressed
+    						in dot notation: <code>person['name']</code> vs. <code>person.name</code>.]]></description>
+      </option>
+      <option key="supernew">
+        <description><![CDATA[This option suppresses warnings about "weird" constructions like
     						<code>new function () { ... }</code> and <code>new Object;</code>. Such
-    						constructions are sometimes used to produce singletons in JavaScript:</p>
+    						constructions are sometimes used to produce singletons in JavaScript:
     <pre>var singleton = new function() {
     var privateVar;
 
     this.publicMethod  = function () {}
     this.publicMethod2 = function () {}
-    };</pre>
-    					</td>
-    				</tr>
-
-    				<tr>
-    					<td class="name"><a name="validthis"><code>validthis</code></a></td>
-    					<td>
-    						<p>This option suppresses warnings about possible strict violations when
+    };</pre>]]></description>
+      </option>
+      <option key="validthis">
+        <description><![CDATA[This option suppresses warnings about possible strict violations when
     						the code is running in strict mode <strong>and</strong> you use <code>this</code>
     						in a non-constructor function. You should use this option—in a function scope
     						only—when you are positive that your use of <code>this</code> is valid in
     						the strict mode (for example, if you call your function using
-    						<code>Function.call</code>).</p>
+    						<code>Function.call</code>).
 
     						<p><strong>Note:</strong> This option can be used only inside of a function
-    						scope. JSHint will fail with an error if you will try to set this option globally.</p>
-    					</td>
-    				</tr>]]></description>
+    						scope. JSHint will fail with an error if you will try to set this option globally.</p>]]></description>
       </option>
     </options>
   </group>
