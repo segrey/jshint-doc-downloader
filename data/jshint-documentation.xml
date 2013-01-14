@@ -17,9 +17,9 @@
       </option>
       <option key="curly">
         <description><![CDATA[
-						<p>This option requires you to always put curly braces around blocks in loops
+						This option requires you to always put curly braces around blocks in loops
 							and conditionals. JavaScript allows you to omit curly braces when the block
-							consists of only one statement, for example:</p>
+							consists of only one statement, for example:
 <pre>while (day)
 shuffle();</pre>
 						<p>However, in some circumstances, it can lead to bugs:</p>
@@ -70,8 +70,8 @@ if (obj.hasOwnProperty(key)) {
       </option>
       <option key="indent">
         <description><![CDATA[
-						<p>This option enforces specific tab width for your code. For example, the following
-						code will trigger a warning on line 4:</p>
+						This option enforces specific tab width for your code. For example, the following
+						code will trigger a warning on line 4:
 
 <pre>/*jshint indent:4 */
 
@@ -82,11 +82,11 @@ doSomething(); // We used only two spaces for indentation here
       </option>
       <option key="latedef">
         <description><![CDATA[
-						<p>This option prohibits the use of a variable before it was defined. JavaScript
+						This option prohibits the use of a variable before it was defined. JavaScript
 						has function scope only and, in addition to that, all variables are always
 						moved—or hoisted— to the top of the function. This behavior can lead
 						to some very nasty bugs and that's why it is safer to always use variable only after
-						they have been explicitly defined.</p>
+						they have been explicitly defined.
 						<p>For more in-depth understanding of scoping and hoisting in JavaScript,
 						read <a href="http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting">JavaScript
 						Scoping and Hoisting</a> by Ben Cherry.</p>
@@ -132,9 +132,9 @@ MyConstructor();     // - [DOMWindow]
       </option>
       <option key="nonew">
         <description><![CDATA[
-						<p>This option prohibits the use of constructor functions for side-effects. Some
+						This option prohibits the use of constructor functions for side-effects. Some
 						people like to call constructor functions without assigning its result to any
-						variable:</p>
+						variable:
 						<pre>new MyConstructor();</pre>
 						<p>There is no advantage in this approach over simply calling MyConstructor since
 						the object that the operator <code>new</code> creates isn't used anywhere so you
@@ -159,8 +159,8 @@ MyConstructor();     // - [DOMWindow]
       </option>
       <option key="undef">
         <description><![CDATA[
-						<p>This option prohibits the use of explicitly undeclared variables. This option
-						is very useful for spotting leaking and mistyped variables.</p>
+						This option prohibits the use of explicitly undeclared variables. This option
+						is very useful for spotting leaking and mistyped variables.
 <pre>/*jshint undef:true */
 
 function test() {
@@ -212,9 +212,9 @@ test(1, 2);
       </option>
       <option key="trailing">
         <description><![CDATA[
-						<p>This option makes it an error to leave a trailing whitespace in your code.
+						This option makes it an error to leave a trailing whitespace in your code.
 						Trailing whitespaces can be source of nasty bugs with multi-line strings in
-						JavaScript:</p>
+						JavaScript:
 
 <pre>// This otherwise perfectly valid string will error if
 // there is a whitespace after \
@@ -224,8 +224,8 @@ World";</pre>
       </option>
       <option key="maxparams">
         <description><![CDATA[
-						<p>This option lets you set the max number of formal parameters allowed
-						per function:</p>
+						This option lets you set the max number of formal parameters allowed
+						per function:
 
 <pre>/*jshint maxparams:3 */
 
@@ -241,7 +241,7 @@ function logout(request, isManual, whereAmI, onSuccess) {
       </option>
       <option key="maxdepth">
         <description><![CDATA[
-						<p>This option lets you control how nested do you want your blocks to be:</p>
+						This option lets you control how nested do you want your blocks to be:
 
 <pre>/*jshint maxdepth:2 */
 
@@ -262,7 +262,7 @@ while (day) {
       </option>
       <option key="maxstatements">
         <description><![CDATA[
-						<p>This option lets you set the max number of statements allowed per function:</p>
+						This option lets you set the max number of statements allowed per function:
 
 <pre>/*jshint maxstatements:4 */
 
@@ -333,8 +333,8 @@ return j; // JSHint: Too many statements per function. (5)
       </option>
       <option key="es5">
         <description><![CDATA[
-						<p>This option tells JSHint that your code uses ECMAScript 5 specific features such
-						as getters and setters. Note that not all browsers implement these features.</p>
+						This option tells JSHint that your code uses ECMAScript 5 specific features such
+						as getters and setters. Note that not all browsers implement these features.
 
 						<p>More info:</p>
 						<ol>
@@ -371,12 +371,12 @@ return j; // JSHint: Too many statements per function. (5)
       </option>
       <option key="funcscope">
         <description><![CDATA[
-						<p>This option suppresses warnings about declaring variables inside of control
+						This option suppresses warnings about declaring variables inside of control
 						structures while accessing them later from the outside. Even though JavaScript has
 						only two real scopes—global and function—such practice leads to
 						confusion among people new to the language and hard-to-debug bugs. This is way,
 						by default, JSHint warns about variables that are used outside of their intended
-						scope.</p>
+						scope.
 
 <pre>function test() {
 if (true) {
@@ -391,8 +391,8 @@ x += 1; // Default: 'x' used out of scope.
       </option>
       <option key="globalstrict">
         <description><![CDATA[
-						<p>This option suppresses warnings about the use of global strict mode. Global
-						strict mode can break third-party widgets so it is not recommended.</p>
+						This option suppresses warnings about the use of global strict mode. Global
+						strict mode can break third-party widgets so it is not recommended.
 
 						<p>For more info about strict mode see the <code>strict</code> option.</p>
 					]]></description>
@@ -403,8 +403,8 @@ x += 1; // Default: 'x' used out of scope.
       </option>
       <option key="lastsemic">
         <description><![CDATA[
-						<p>This option suppresses warnings about missing semicolons, but only when
-						the semicolon is omitted for the last statement in a one-line block:</p>
+						This option suppresses warnings about missing semicolons, but only when
+						the semicolon is omitted for the last statement in a one-line block:
 						<pre>var name = (function() { return 'Anton' }());</pre>
 						<p>This is a very niche use case that is useful only when you use automatic
 						JavaScript code generators.</p>
@@ -417,7 +417,7 @@ x += 1; // Default: 'x' used out of scope.
       </option>
       <option key="laxcomma">
         <description><![CDATA[
-						<p>This option suppresses warnings about comma-first coding style:</p>
+						This option suppresses warnings about comma-first coding style:
 <pre>var obj = {
 name: 'Anton'
 , handle: 'valueof'
@@ -427,8 +427,8 @@ name: 'Anton'
       </option>
       <option key="loopfunc">
         <description><![CDATA[
-						<p>This option suppresses warnings about functions inside of loops. Defining
-						functions inside of loops can lead to bugs such as this one:</p>
+						This option suppresses warnings about functions inside of loops. Defining
+						functions inside of loops can lead to bugs such as this one:
 <pre>var nums = [];
 
 for (var i = 0; i &lt; 10; i++) {
