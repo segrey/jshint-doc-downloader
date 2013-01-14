@@ -112,7 +112,7 @@ function replaceHtmlEntities(html) {
 
 function buildOptionDocHtmlString(optionName, tdDoc) {
     var first = tdDoc.children().first().filter('p');
-    var wholeHtml = tdDoc.html();
+    var wholeHtml = tdDoc.html().trim();
     if (first.length > 0) {
         var firstParaInnerHtml = first.html();
         var firstParaOuterHtml = '<p>' + firstParaInnerHtml + '</p>';

@@ -2,4 +2,4 @@
 .idea/workspace.xml
 *.dylib
 node_modules/jsdom/node_modules/nwmatcher/lib/spidermonkey/js
-node_modules/jsdom/node_modules/contextify/build/Release
+node_modules/jsdom/node_modules/contextify/build
