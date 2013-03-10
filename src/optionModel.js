@@ -6,13 +6,11 @@ function Group(title, description) {
 
 Group.prototype.addOption = function(name, description) {
     if (this.options[name] != null) {
-        throw new Error("Duplicate option: " + name);
+        throw new Error('Duplicate option: ' + name);
     }
     this.options[name] = description;
 };
 
-exports.createGroup = function() {
-    var obj = Object.create(Group.prototype);
-    Group.apply(obj, arguments);
-    return obj;
+exports.createGroup = function(title, description) {
+    return new Group(title, description);
 };
