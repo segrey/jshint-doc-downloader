@@ -155,7 +155,7 @@
 
     						<p>If your variable is defined in another file, you can use
     						<code>/*global ... */</code> syntaxto tell JSHint about it. See the
-    						<a href="/about/">About page</a> for more information.</p>]]></description>
+    						<a href="http://jshint.com/about/">About page</a> for more information.</p>]]></description>
       </option>
       <option key="unused">
         <description><![CDATA[This option warns when you define and never use your variables. It is very
@@ -559,8 +559,7 @@
     		improved in any way and might be removed at any point.]]></description>
     <options>
       <option key="nomen">
-        <description><![CDATA[This option disallows the use of dangling <code>_</code> in variables.
-    						We don't know why would you need it.]]></description>
+        <description><![CDATA[This option disallows the use of dangling <code>_</code> in variables.]]></description>
       </option>
       <option key="onevar">
         <description><![CDATA[This option allows only one <code>var</code> statement per function. Some
@@ -585,7 +584,8 @@
         <description><![CDATA[This option makes JSHint stop on the first error or warning.]]></description>
       </option>
       <option key="white">
-        <description><![CDATA[This option make JSHint check your source code against Douglas Crockford's
+        <description><![CDATA[This option enforces strict whitespace rules applied throughout your code.<p>
+                              It makes JSHint check your source code against Douglas Crockford's
     						JavaScript coding style. Unfortunately, his “The Good Parts” book aside,
     						the actual rules are not very well documented.]]></description>
       </option>
