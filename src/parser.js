@@ -5,9 +5,11 @@ var jsdom = require('jsdom'),
     optionModel = require('./optionModel'),
     util = require('./util'),
     groupDescriptions = {
-        'Enforcing options' : 'These options tell JSHint to be more strict towards your code. Use them if you want\n' +
-            ' to allow only a safe subset of JavaScript—very useful when your codebase is shared\n' +
-            ' with a big number of developers with different skill levels.'
+        'Enforcing options' : 'These options tell JSHint to be more strict towards your code. Use them if you want' +
+            ' to allow only a safe subset of JavaScript—very useful when your codebase is shared' +
+            ' with a big number of developers with different skill levels.',
+        'Relaxing options' : 'These options allow you to suppress certain types of warnings. Use them only if you' +
+            ' are absolutely positive that you know what you are doing.'
     };
 
 
@@ -59,9 +61,11 @@ function parse(body) {
                     var optionNameTdElement = tdElement.children('td.name').first();
                     if (optionNameTdElement.length > 0) {
                         var optionName = optionNameTdElement.attr('id');
-                        var tdDoc = tdElement.children('td[class!=name]');
-                        var optionDescription = buildOptionDocHtmlString(tdDoc);
-                        group.addOption(optionName, optionDescription);
+                        if (optionName.trim().length > 0) {
+                            var tdDoc = tdElement.children('td[class!=name]');
+                            var optionDescription = buildOptionDocHtmlString(tdDoc);
+                            group.addOption(optionName, optionDescription);
+                        }
                     }
                 });
                 groups.push(group);
