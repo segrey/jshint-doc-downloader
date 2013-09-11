@@ -15,6 +15,6 @@ function downloadHtmlPage(callback) {
 
 downloadHtmlPage(function (error, body) {
   if (body != null) {
-    util.saveJsHintDocHtmlFile(body);
+    util.writeOptionsHtmlFile(body);
   }
 });

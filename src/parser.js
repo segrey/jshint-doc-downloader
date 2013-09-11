@@ -79,4 +79,8 @@ function parse(body) {
     });
 }
 
-parse(util.readJSHintDocHtmlFileContent());
+(function() {
+  var optionsHtmlFilePath = util.getOptionsHtmlFilePath();
+  parse(util.readJSHintDocHtmlFileContent());
+
+}());
