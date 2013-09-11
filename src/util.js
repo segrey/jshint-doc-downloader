@@ -3,13 +3,13 @@ var fs = require('fs'),
     pathToJSHintDocHtml = join(__dirname, '../data/jshint-docs.html'),
     jade = require('jade');
 
-exports.saveJsHintDocHtmlFile = function(content) {
-    var writeStream = fs.createWriteStream(
-        pathToJSHintDocHtml,
-        { flags: 'w' }
-    );
-    writeStream.end(content);
-};
+function saveJsHintDocHtmlFile(content) {
+  var writeStream = fs.createWriteStream(
+    pathToJSHintDocHtml,
+    { flags: 'w' }
+  );
+  writeStream.end(content);
+}
 
 exports.readJSHintDocHtmlFileContent = function() {
     return fs.readFileSync(pathToJSHintDocHtml).toString();
@@ -92,3 +92,4 @@ function refine(html) {
 }
 
 exports.refine = refine;
+exports.saveJsHintDocHtmlFile = saveJsHintDocHtmlFile;
