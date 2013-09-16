@@ -17,4 +17,7 @@ downloadHtmlPage(function (error, body) {
   if (body != null) {
     util.writeOptionsHtmlFile(body);
   }
+  else {
+    console.error(error);
+  }
 });
