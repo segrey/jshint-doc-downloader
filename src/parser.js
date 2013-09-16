@@ -81,6 +81,6 @@ function parse(body) {
 
 (function() {
   var optionsHtmlFilePath = util.getOptionsHtmlFilePath();
+  console.log("Reading " + optionsHtmlFilePath + "...");
   parse(util.readJSHintDocHtmlFileContent());
-
 }());
