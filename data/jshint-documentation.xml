@@ -36,6 +36,12 @@ safer. If you would like to learn more about type coercion in JavaScript,
 we recommend <a href="http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/">Truth, Equality and JavaScript</a>
 by Angus Croll.]]></description>
       </option>
+      <option key="es3">
+        <description><![CDATA[This option tells JSHint that your code needs to adhere to ECMAScript 3
+specification. Use this option if you need your program to be executable
+in older browsers—such as Internet Explorer 6/7/8—and other legacy
+JavaScript environments.]]></description>
+      </option>
       <option key="forin">
         <description><![CDATA[This option requires all <code>for in</code> loops to filter object's items. The for in
 statement allows for looping through the names of all of the properties of an
@@ -75,6 +81,8 @@ has function scope only and, in addition to that, all variables are always
 moved—or hoisted— to the top of the function. This behavior can lead to some
 very nasty bugs and that's why it is safer to always use variable only after
 they have been explicitly defined.
+
+<p>Setting this option to "nofunc" will allow function declarations to be ignored.</p>
 
 <p>For more in-depth understanding of scoping and hoisting in JavaScript, read
 <a href="http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting">JavaScript Scoping and Hoisting</a>
@@ -159,7 +167,11 @@ test(1, 2);
 // Line 4: 'c' was defined but never used.</code></pre>
 
 <p>In addition to that, this option will warn you about unused global variables
-declared via <code>/*global ... */</code> directive.</p>]]></description>
+declared via <code>/*global ... */</code> directive.</p>
+
+<p>This can be set to <code>vars</code> to only check for variables, not function parameters,
+or <code>strict</code> to check all variables and parameters.  The default (true) behavior
+is to allow unused parameters that are followed by a used parameter.</p>]]></description>
       </option>
       <option key="strict">
         <description><![CDATA[This option requires all functions to run in ECMAScript 5's strict mode.
@@ -209,10 +221,10 @@ function main(meaning) {
 
   if (meaning === 42) {
     while (day) {
-  	  shuffle();
+      shuffle();
 
       if (tired) { // JSHint: Blocks are nested too deeply (3).
-  		  sleep();
+          sleep();
       }
     }
   }
@@ -256,13 +268,13 @@ a program's source code. Read more about
     <options>
       <option key="asi">
         <description><![CDATA[This option suppresses warnings about missing semicolons. There is a lot of
-FUD spread about semicolon spreaded by quite a few people in the community. The
+FUD about semicolon spread by quite a few people in the community. The
 common myths are that semicolons are required all the time (they are not) and
 that they are unreliable. JavaScript has rules about semicolons which are
 followed by <em>all</em> browsers so it is up to you to decide whether you should or
 should not use semicolons in your code.
 
-<p>For more information about semicolons in JavaScript read 
+<p>For more information about semicolons in JavaScript read
 <a href="http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding">An Open Letter to JavaScript Leaders Regarding Semicolons</a>
 by Isaac Schlueter and <a href="http://inimino.org/~inimino/blog/javascript_semicolons">JavaScript Semicolon Insertion</a>.</p>]]></description>
       </option>
@@ -271,7 +283,12 @@ by Isaac Schlueter and <a href="http://inimino.org/~inimino/blog/javascript_semi
 comparisons are expected. More often than not, code like <code>if (a = 10) {}</code> is a
 typo. However, it can be useful in cases like this one:
 
-<pre><code>for (var i = 0, person; person = people[i]; i++) {}</code></pre>]]></description>
+<pre><code>for (var i = 0, person; person = people[i]; i++) {}</code></pre>
+
+<p>You can silence this error on a per-use basis by surrounding the assignment
+with parenthesis, such as:</p>
+
+<pre><code>for (var i = 0, person; (person = people[i]); i++) {}</code></pre>]]></description>
       </option>
       <option key="debug">
         <description><![CDATA[This option suppresses warnings about the <code>debugger</code> statements in your code.]]></description>
@@ -280,18 +297,10 @@ typo. However, it can be useful in cases like this one:
         <description><![CDATA[This option suppresses warnings about <code>== null</code> comparisons. Such comparisons
 are often useful when you want to check if a variable is <code>null</code> or <code>undefined</code>.]]></description>
       </option>
-      <option key="es5">
-        <description><![CDATA[This option tells JSHint that your code uses ECMAScript 5 specific syntax such
-as getters and setters. Note that not all browsers implement these features.
-
-<p>More info:</p>
-
-<ol><li><a href="http://kangax.github.com/es5-compat-table/">ES5 compatibility table</a> by Juriy Zaytsev</li><li><a href="https://developer.mozilla.org/En/javascript/ECMAScript_5_support_in_Mozilla">ECMAScript 5 support in Mozilla</a></li></ol>]]></description>
-      </option>
       <option key="esnext">
-        <description><![CDATA[This option tells JSHint that your code uses ECMAScript 6 specific features such
-as <code>const</code>. Note that these features are not finalized yet and not all browsers
-implement them.
+        <description><![CDATA[This option tells JSHint that your code uses ECMAScript 6 specific syntax.
+Note that these features are not finalized yet and not all browsers implement
+them.
 
 <p>More info:</p>
 
@@ -323,7 +332,7 @@ scope.
   }
 
   x += 1; // Default: 'x' used out of scope.
-	        // No warning when funcscope:true
+            // No warning when funcscope:true
 }</code></pre>]]></description>
       </option>
       <option key="globalstrict">
@@ -380,10 +389,19 @@ nums[0](2); // Prints 12 instead of 2</code></pre>
 for (var i = 0; i &lt; 10; i++) {
   (function (i) {
     nums[i] = function (j) {
-    	return i + j;
+        return i + j;
     };
   }(i));
 }</code></pre>]]></description>
+      </option>
+      <option key="moz">
+        <description><![CDATA[This options tells JSHint that your code uses Mozilla JavaScript
+extensions. Unless you develop specifically for the Firefox web browser
+you don't need this option.
+
+<p>More info:</p>
+
+<ul><li><a href="https://developer.mozilla.org/en-US/docs/JavaScript/New_in_JavaScript/1.7">New in JavaScript 1.7</a></li></ul>]]></description>
       </option>
       <option key="multistr">
         <description><![CDATA[This option suppresses warnings about multi-line strings. Multi-line strings
@@ -402,7 +420,7 @@ World"; // All good.
 text = "Hello
 World"; // Warning, no escape character.
 
-text = "Hello\ 
+text = "Hello\
 World"; // Warning, there is a space after \</code></pre>]]></description>
       </option>
       <option key="proto">
@@ -491,6 +509,12 @@ JavaScript environment that uses an asynchronous event-driven model.]]></descrip
         <description><![CDATA[This option defines non-standard but widely adopted globals such as <code>escape</code> and
 <code>unescape</code>.]]></description>
       </option>
+      <option key="phantom">
+        <description><![CDATA[This option defines globals available when your core is running inside
+of the PhantomJS runtime environment. <a href="http://phantomjs.org/">PhantomJS</a>
+is a headless WebKit scriptable with a JavaScript API. It has fast and native support
+for various web standards: DOM handling, CSS selector, JSON, Canvas, and SVG.]]></description>
+      </option>
       <option key="prototypejs">
         <description><![CDATA[This option defines globals exposed by the <a href="http://www.prototypejs.org/">Prototype</a>
 JavaScript framework.]]></description>
@@ -534,8 +558,8 @@ readability. Example (taken from JSLint/JSHint source code):
   if (b) {
     indent += option.indent;
     if (nexttoken.from === indent + option.indent) {
-		  indent += option.indent;
-	  }
+          indent += option.indent;
+      }
   }
 
   // [...]
