@@ -1,98 +1,103 @@
 <!doctype html>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-		<meta name="description" content="A JavaScript Code Quality Tool">
-		<meta name="author" content="Anton Kovalyov">
-		<title>Documentation — JSHint</title>
-		<link rel="stylesheet" href="/src/css/bootstrap.css">
-		<link rel="stylesheet" href="/src/css/docs.css">
-	</head>
+<html lang=en>
+  <head>
+    <title>JSHint Options Reference</title>
 
-	<body>
-		<div class="navbar navbar-fixed-top navbar-inverse">
-	<div class="navbar-inner">
-		<div class="container">
-			<ul class="nav">
-				<li ><a href="/">Home</a>
-				<li ><a href="/about/">About</a>
-				<li class="active"><a href="/docs/">Docs</a>
-				<li ><a href="/install/">Install</a>
-				<li ><a href="/hack/">Hack</a>
-				<li ><a href="/blog/">Blog</a>
-			</ul>
-		</div>
-	</div>
-</div>
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="Anton Kovalyov">
 
-<div class="page-header pull-left">
-	<h1 class="pull-left">
-		
-			Documentation <small>Options</small>
-		
-	</h1>
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
 
-	<div id="carbonads-container" class="pull-right">
-		<div class="carbonad">
-			<div id="azcarbon"></div>
-			<script type="text/javascript">
-				var z = document.createElement("script");
-				z.type = "text/javascript";
-				z.async = true;
-				z.src = "http://engine.carbonads.com/z/49189/azcarbon_2_1_0_HORIZ";
-				var s = document.getElementsByTagName("script")[0];
-				s.parentNode.insertBefore(z, s);
-			</script>
-		</div>
-	</div>
-</div>
+    <script type="text/javascript" src="//use.typekit.net/pxl3iqm.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-<div class="clearfix"></div>
+    <script>
+      if (window.self !== window.top)
+        window.top.location.href = document.location.href;
 
-		
-			<div class="container-fluid">
-				<div class="row-fluid">
-					<div class="span2">
-						<ul class="nav nav-tabs nav-stacked docs-nav">
-							<li >
-								<a href="/docs">Usage</a>
-							</li>
+      function jumpToOption() {
+        var input = document.getElementById("jump-to-option")
 
-							<li >
-								<a href="/docs/config/">Configuration</a>
-							</li>
+        if (/^\s*$/.test(input.value))
+          return false
 
-							<li class="active">
-								<a href="/docs/options">Options</a>
-							</li>
+        _gaq.push(["_trackEvent", "Docs", "jumpToOption", input.value]);
 
-							<li >
-								<a href="/docs/faq">FAQ</a>
-							</li>
+        if (window.location.pathname === "/docs/options/")
+          window.location.hash = "#" + input.value
+        else
+          window.location = "/docs/options/#" + input.value
 
-							<li >
-								<a href="/docs/support">Support</a>
-							</li>
-						</ul>
-					</div>
+        return false
+      }
 
-					<div class="span10 content">
-						<p><strong>Enforcing options</strong></p>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="/">JSHint</a>
+            </div>
+
+            <ul class="nav navbar-nav">
+              <li><a href="/about/">About</a></li>
+              <li><a href="/docs/">Docs</a></li>
+              <li><a href="/install/">Install</a></li>
+              <li><a href="/hack/">Hack</a></li>
+              <li><a href="/blog/">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+              <div class="form-group">
+                <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+              </div>
+              <button type="submit" class="btn btn-default">Jump to docs</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1>JSHint Options</h1>
+
+<p>This is a complete list of all configuration options accepted by JSHint. If you see something missing,
+you should either <a href="https://github.com/jshint/jshint/issues/new">file a bug</a> or
+<a href="mailto:anton@kovalyov.net">email me</a>.</p>
+
+<h3>Enforcing options</h3>
+
+<p>When set to true, these options will make JSHint produce more warnings about your code.</p>
+
 <table class='options table table-bordered table-striped'><tr>
-<td id='bitwise' class='name'><a href='#bitwise'>bitwise</a></td>
+<td class='name' id='bitwise'><a href='#bitwise'>bitwise</a></td>
 <td class='desc'><p>This option prohibits the use of bitwise operators such as <code>^</code> (XOR), <code>|</code> (OR)
 and others. Bitwise operators are very rare in JavaScript programs and quite
 often <code>&amp;</code> is simply a mistyped <code>&amp;&amp;</code>.</p></td>
 </tr>
 <tr>
-<td id='camelcase' class='name'><a href='#camelcase'>camelcase</a></td>
+<td class='name' id='camelcase'><a href='#camelcase'>camelcase</a></td>
 <td class='desc'><p>This option allows you to force all variable names to use either camelCase
 style or UPPER_CASE with underscores.</p></td>
 </tr>
 <tr>
-<td id='curly' class='name'><a href='#curly'>curly</a></td>
+<td class='name' id='curly'><a href='#curly'>curly</a></td>
 <td class='desc'><p>This option requires you to always put curly braces around blocks in loops and
 conditionals. JavaScript allows you to omit curly braces when the block consists
 of only one statement, for example:</p>
@@ -108,23 +113,23 @@ is a part of the loop while in reality it is not):</p>
   sleep();</code></pre></td>
 </tr>
 <tr>
-<td id='eqeqeq' class='name'><a href='#eqeqeq'>eqeqeq</a></td>
+<td class='name' id='eqeqeq'><a href='#eqeqeq'>eqeqeq</a></td>
 <td class='desc'><p>This options prohibits the use of <code>==</code> and <code>!=</code> in favor of <code>===</code> and <code>!==</code>. The
 former try to coerce values before comparing them which can lead to some
 unexpected results. The latter don&#39;t do any coercion so they are generally
 safer. If you would like to learn more about type coercion in JavaScript,
-we recommend <a href='http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/'>Truth, Equality and JavaScript</a>
+we recommend <a href="http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/">Truth, Equality and JavaScript</a>
 by Angus Croll.</p></td>
 </tr>
 <tr>
-<td id='es3' class='name'><a href='#es3'>es3</a></td>
+<td class='name' id='es3'><a href='#es3'>es3</a></td>
 <td class='desc'><p>This option tells JSHint that your code needs to adhere to ECMAScript 3
 specification. Use this option if you need your program to be executable
-in older browsers—such as Internet Explorer 6/7/8—and other legacy
+in older browsers—such as Internet Explorer 6/7/8/9—and other legacy
 JavaScript environments.</p></td>
 </tr>
 <tr>
-<td id='forin' class='name'><a href='#forin'>forin</a></td>
+<td class='name' id='forin'><a href='#forin'>forin</a></td>
 <td class='desc'><p>This option requires all <code>for in</code> loops to filter object&#39;s items. The for in
 statement allows for looping through the names of all of the properties of an
 object including those inherited throught the prototype chain. This behavior can
@@ -138,18 +143,27 @@ filter inherited properties out as shown in the example:</p>
 }</code></pre>
 
 <p>For more in-depth understanding of <code>for in</code> loops in JavaScript, read
-<a href='http://javascriptweblog.wordpress.com/2011/01/04/exploring-javascript-for-in-loops/'>Exploring JavaScript for-in loops</a>
+<a href="http://javascriptweblog.wordpress.com/2011/01/04/exploring-javascript-for-in-loops/">Exploring JavaScript for-in loops</a>
 by Angus Croll.</p></td>
 </tr>
 <tr>
-<td id='immed' class='name'><a href='#immed'>immed</a></td>
+<td class='name' id='freeze'><a href='#freeze'>freeze</a></td>
+<td class='desc'><p>This options prohibits overwriting prototypes of native objects such as
+<code>Array</code>, <code>Date</code> and so on.</p>
+
+<pre><code>/* jshint freeze:true */
+Array.prototype.count = function (value) { return 4; };
+// -&gt; Warning: Extending prototype of native object: &#39;Array&#39;.</code></pre></td>
+</tr>
+<tr>
+<td class='name' id='immed'><a href='#immed'>immed</a></td>
 <td class='desc'><p>This option prohibits the use of immediate function invocations without wrapping
 them in parentheses. Wrapping parentheses assists readers of your code in
 understanding that the expression is the result of a function, and not the
 function itself.</p></td>
 </tr>
 <tr>
-<td id='indent' class='name'><a href='#indent'>indent</a></td>
+<td class='name' id='indent'><a href='#indent'>indent</a></td>
 <td class='desc'><p>This option enforces specific tab width for your code. For example, the
 following code will trigger a warning on line 4:</p>
 
@@ -160,7 +174,7 @@ if (cond) {
 }</code></pre></td>
 </tr>
 <tr>
-<td id='latedef' class='name'><a href='#latedef'>latedef</a></td>
+<td class='name' id='latedef'><a href='#latedef'>latedef</a></td>
 <td class='desc'><p>This option prohibits the use of a variable before it was defined. JavaScript
 has function scope only and, in addition to that, all variables are always
 moved—or hoisted— to the top of the function. This behavior can lead to some
@@ -170,11 +184,11 @@ they have been explicitly defined.</p>
 <p>Setting this option to &quot;nofunc&quot; will allow function declarations to be ignored.</p>
 
 <p>For more in-depth understanding of scoping and hoisting in JavaScript, read
-<a href='http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting'>JavaScript Scoping and Hoisting</a>
+<a href="http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting">JavaScript Scoping and Hoisting</a>
 by Ben Cherry.</p></td>
 </tr>
 <tr>
-<td id='newcap' class='name'><a href='#newcap'>newcap</a></td>
+<td class='name' id='newcap'><a href='#newcap'>newcap</a></td>
 <td class='desc'><p>This option requires you to capitalize names of constructor functions.
 Capitalizing functions that are intended to be used with <code>new</code> operator is just
 a convention that helps programmers to visually distinguish constructor functions
@@ -187,21 +201,21 @@ that was intended to be used with <code>new</code> is used without it, <code>thi
 the global object instead of a new object.</p></td>
 </tr>
 <tr>
-<td id='noarg' class='name'><a href='#noarg'>noarg</a></td>
+<td class='name' id='noarg'><a href='#noarg'>noarg</a></td>
 <td class='desc'><p>This option prohibits the use of <code>arguments.caller</code> and <code>arguments.callee</code>.
 Both <code>.caller</code> and <code>.callee</code> make quite a few optimizations impossible so they
 were deprecated in future versions of JavaScript. In fact, ECMAScript 5 forbids
 the use of <code>arguments.callee</code> in strict mode.</p></td>
 </tr>
 <tr>
-<td id='noempty' class='name'><a href='#noempty'>noempty</a></td>
+<td class='name' id='noempty'><a href='#noempty'>noempty</a></td>
 <td class='desc'><p>This option warns when you have an empty block in your code. JSLint was
 originally warning for all empty blocks and we simply made it optional.
 There were no studies reporting that empty blocks in JavaScript break your code
 in any way.</p></td>
 </tr>
 <tr>
-<td id='nonew' class='name'><a href='#nonew'>nonew</a></td>
+<td class='name' id='nonew'><a href='#nonew'>nonew</a></td>
 <td class='desc'><p>This option prohibits the use of constructor functions for side-effects. Some
 people like to call constructor functions without assigning its result to any
 variable:</p>
@@ -213,21 +227,21 @@ the object that the operator <code>new</code> creates isn&#39;t used anywhere so
 generally avoid constructors like this one.</p></td>
 </tr>
 <tr>
-<td id='plusplus' class='name'><a href='#plusplus'>plusplus</a></td>
+<td class='name' id='plusplus'><a href='#plusplus'>plusplus</a></td>
 <td class='desc'><p>This option prohibits the use of unary increment and decrement operators.
 Some people think that <code>++</code> and <code>--</code> reduces the quality of their coding styles
 and there are programming languages—such as Python—that go completely without
 these operators.</p></td>
 </tr>
 <tr>
-<td id='quotmark' class='name'><a href='#quotmark'>quotmark</a></td>
+<td class='name' id='quotmark'><a href='#quotmark'>quotmark</a></td>
 <td class='desc'><p>This option enforces the consistency of quotation marks used throughout your
 code. It accepts three values: <code>true</code> if you don&#39;t want to enforce one
 particular style but want some consistency, <code>&quot;single&quot;</code> if you want to allow only
 single quotes and <code>&quot;double&quot;</code> if you want to allow only double quotes.</p></td>
 </tr>
 <tr>
-<td id='undef' class='name'><a href='#undef'>undef</a></td>
+<td class='name' id='undef'><a href='#undef'>undef</a></td>
 <td class='desc'><p>This option prohibits the use of explicitly undeclared variables. This option
 is very useful for spotting leaking and mistyped variables.</p>
 
@@ -242,7 +256,7 @@ function test() {
 directive to tell JSHint about it.</p></td>
 </tr>
 <tr>
-<td id='unused' class='name'><a href='#unused'>unused</a></td>
+<td class='name' id='unused'><a href='#unused'>unused</a></td>
 <td class='desc'><p>This option warns when you define and never use your variables. It is very
 useful for general code cleanup, especially when used in addition to <code>undef</code>.</p>
 
@@ -267,9 +281,9 @@ or <code>strict</code> to check all variables and parameters.  The default (true
 is to allow unused parameters that are followed by a used parameter.</p></td>
 </tr>
 <tr>
-<td id='strict' class='name'><a href='#strict'>strict</a></td>
+<td class='name' id='strict'><a href='#strict'>strict</a></td>
 <td class='desc'><p>This option requires all functions to run in ECMAScript 5&#39;s strict mode.
-<a href='https://developer.mozilla.org/en/JavaScript/Strict_mode'>Strict mode</a> is a way
+<a href="https://developer.mozilla.org/en/JavaScript/Strict_mode">Strict mode</a> is a way
 to opt in to a restricted variant of JavaScript. Strict mode eliminates some
 JavaScript pitfalls that didn&#39;t cause errors by changing them to produce errors.
 It also fixes mistakes that made it difficult for the JavaScript engines to
@@ -281,7 +295,7 @@ page. If you really want to use global strict mode, see the <em>globalstrict</em
 option.</p></td>
 </tr>
 <tr>
-<td id='trailing' class='name'><a href='#trailing'>trailing</a></td>
+<td class='name' id='trailing'><a href='#trailing'>trailing</a></td>
 <td class='desc'><p>This option makes it an error to leave a trailing whitespace in your code.
 Trailing whitespaces can be source of nasty bugs with multi-line strings in
 JavaScript:</p>
@@ -292,7 +306,7 @@ var str = &quot;Hello \
 World&quot;;</code></pre></td>
 </tr>
 <tr>
-<td id='maxparams' class='name'><a href='#maxparams'>maxparams</a></td>
+<td class='name' id='maxparams'><a href='#maxparams'>maxparams</a></td>
 <td class='desc'><p>This option lets you set the max number of formal parameters allowed per
 function:</p>
 
@@ -308,7 +322,7 @@ function logout(request, isManual, whereAmI, onSuccess) {
 }</code></pre></td>
 </tr>
 <tr>
-<td id='maxdepth' class='name'><a href='#maxdepth'>maxdepth</a></td>
+<td class='name' id='maxdepth'><a href='#maxdepth'>maxdepth</a></td>
 <td class='desc'><p>This option lets you control how nested do you want your blocks to be:</p>
 
 <pre><code>/*jshint maxdepth:2 */
@@ -328,7 +342,7 @@ function main(meaning) {
 }</code></pre></td>
 </tr>
 <tr>
-<td id='maxstatements' class='name'><a href='#maxstatements'>maxstatements</a></td>
+<td class='name' id='maxstatements'><a href='#maxstatements'>maxstatements</a></td>
 <td class='desc'><p>This option lets you set the max number of statements allowed per function:</p>
 
 <pre><code>/*jshint maxstatements:4 */
@@ -351,23 +365,23 @@ function main() {
 }</code></pre></td>
 </tr>
 <tr>
-<td id='maxcomplexity' class='name'><a href='#maxcomplexity'>maxcomplexity</a></td>
+<td class='name' id='maxcomplexity'><a href='#maxcomplexity'>maxcomplexity</a></td>
 <td class='desc'><p>This option lets you control cyclomatic complexity throughout your code.
 Cyclomatic complexity measures the number of linearly independent paths through
 a program&#39;s source code. Read more about
-<a href='http://en.wikipedia.org/wiki/Cyclomatic_complexity'>cyclomatic complexity on Wikipedia</a>.</p></td>
+<a href="http://en.wikipedia.org/wiki/Cyclomatic_complexity">cyclomatic complexity on Wikipedia</a>.</p></td>
 </tr>
 <tr>
-<td id='maxlen' class='name'><a href='#maxlen'>maxlen</a></td>
+<td class='name' id='maxlen'><a href='#maxlen'>maxlen</a></td>
 <td class='desc'><p>This option lets you set the maximum length of a line.</p></td>
-</tr>
-<tr>
-<td id='' class='name'><a href='#' /></td>
-<td class='desc' />
 </tr></table>
-<p><strong>Relaxing options</strong></p>
+
+<h3>Relaxing options</h3>
+
+<p>When set to true, these options will make JSHint produce less warnings about your code.</p>
+
 <table class='options table table-bordered table-striped'><tr>
-<td id='asi' class='name'><a href='#asi'>asi</a></td>
+<td class='name' id='asi'><a href='#asi'>asi</a></td>
 <td class='desc'><p>This option suppresses warnings about missing semicolons. There is a lot of
 FUD about semicolon spread by quite a few people in the community. The
 common myths are that semicolons are required all the time (they are not) and
@@ -376,11 +390,11 @@ followed by <em>all</em> browsers so it is up to you to decide whether you shoul
 should not use semicolons in your code.</p>
 
 <p>For more information about semicolons in JavaScript read
-<a href='http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding'>An Open Letter to JavaScript Leaders Regarding Semicolons</a>
-by Isaac Schlueter and <a href='http://inimino.org/~inimino/blog/javascript_semicolons'>JavaScript Semicolon Insertion</a>.</p></td>
+<a href="http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding">An Open Letter to JavaScript Leaders Regarding Semicolons</a>
+by Isaac Schlueter and <a href="http://inimino.org/~inimino/blog/javascript_semicolons">JavaScript Semicolon Insertion</a>.</p></td>
 </tr>
 <tr>
-<td id='boss' class='name'><a href='#boss'>boss</a></td>
+<td class='name' id='boss'><a href='#boss'>boss</a></td>
 <td class='desc'><p>This option suppresses warnings about the use of assignments in cases where
 comparisons are expected. More often than not, code like <code>if (a = 10) {}</code> is a
 typo. However, it can be useful in cases like this one:</p>
@@ -393,40 +407,40 @@ with parenthesis, such as:</p>
 <pre><code>for (var i = 0, person; (person = people[i]); i++) {}</code></pre></td>
 </tr>
 <tr>
-<td id='debug' class='name'><a href='#debug'>debug</a></td>
+<td class='name' id='debug'><a href='#debug'>debug</a></td>
 <td class='desc'><p>This option suppresses warnings about the <code>debugger</code> statements in your code.</p></td>
 </tr>
 <tr>
-<td id='eqnull' class='name'><a href='#eqnull'>eqnull</a></td>
+<td class='name' id='eqnull'><a href='#eqnull'>eqnull</a></td>
 <td class='desc'><p>This option suppresses warnings about <code>== null</code> comparisons. Such comparisons
 are often useful when you want to check if a variable is <code>null</code> or <code>undefined</code>.</p></td>
 </tr>
 <tr>
-<td id='esnext' class='name'><a href='#esnext'>esnext</a></td>
+<td class='name' id='esnext'><a href='#esnext'>esnext</a></td>
 <td class='desc'><p>This option tells JSHint that your code uses ECMAScript 6 specific syntax.
 Note that these features are not finalized yet and not all browsers implement
 them.</p>
 
 <p>More info:</p>
 
-<ul><li><a href='http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts'>Draft Specification for ES.next (ECMA-262 Ed. 6)</a></li></ul></td>
+<ul><li><a href="http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts">Draft Specification for ES.next (ECMA-262 Ed. 6)</a></li></ul></td>
 </tr>
 <tr>
-<td id='evil' class='name'><a href='#evil'>evil</a></td>
+<td class='name' id='evil'><a href='#evil'>evil</a></td>
 <td class='desc'><p>This option suppresses warnings about the use of <code>eval</code>. The use of <code>eval</code> is
 discouraged because it can make your code vulnerable to various injection
 attacks and it makes it hard for JavaScript interpreter to do certain
 optimizations.</p></td>
 </tr>
 <tr>
-<td id='expr' class='name'><a href='#expr'>expr</a></td>
+<td class='name' id='expr'><a href='#expr'>expr</a></td>
 <td class='desc'><p>This option suppresses warnings about the use of expressions where normally you
 would expect to see assignments or function calls. Most of the time, such code
 is a typo. However, it is not forbidden by the spec and that&#39;s why this warning
 is optional.</p></td>
 </tr>
 <tr>
-<td id='funcscope' class='name'><a href='#funcscope'>funcscope</a></td>
+<td class='name' id='funcscope'><a href='#funcscope'>funcscope</a></td>
 <td class='desc'><p>This option suppresses warnings about declaring variables inside of control
 structures while accessing them later from the outside. Even though JavaScript
 has only two real scopes—global and function—such practice leads to confusion
@@ -444,19 +458,19 @@ scope.</p>
 }</code></pre></td>
 </tr>
 <tr>
-<td id='globalstrict' class='name'><a href='#globalstrict'>globalstrict</a></td>
+<td class='name' id='globalstrict'><a href='#globalstrict'>globalstrict</a></td>
 <td class='desc'><p>This option suppresses warnings about the use of global strict mode. Global
 strict mode can break third-party widgets so it is not recommended.</p>
 
 <p>For more info about strict mode see the <code>strict</code> option.</p></td>
 </tr>
 <tr>
-<td id='iterator' class='name'><a href='#iterator'>iterator</a></td>
+<td class='name' id='iterator'><a href='#iterator'>iterator</a></td>
 <td class='desc'><p>This option suppresses warnings about the <code>__iterator__</code> property. This property
 is not supported by all browsers so use it carefully.</p></td>
 </tr>
 <tr>
-<td id='lastsemic' class='name'><a href='#lastsemic'>lastsemic</a></td>
+<td class='name' id='lastsemic'><a href='#lastsemic'>lastsemic</a></td>
 <td class='desc'><p>This option suppresses warnings about missing semicolons, but only when the
 semicolon is omitted for the last statement in a one-line block:</p>
 
@@ -466,13 +480,13 @@ semicolon is omitted for the last statement in a one-line block:</p>
 JavaScript code generators.</p></td>
 </tr>
 <tr>
-<td id='laxbreak' class='name'><a href='#laxbreak'>laxbreak</a></td>
+<td class='name' id='laxbreak'><a href='#laxbreak'>laxbreak</a></td>
 <td class='desc'><p>This option suppresses most of the warnings about possibly unsafe line breakings
 in your code. It doesn&#39;t suppress warnings about comma-first coding style. To
 suppress those you have to use <code>laxcomma</code> (see below).</p></td>
 </tr>
 <tr>
-<td id='laxcomma' class='name'><a href='#laxcomma'>laxcomma</a></td>
+<td class='name' id='laxcomma'><a href='#laxcomma'>laxcomma</a></td>
 <td class='desc'><p>This option suppresses warnings about comma-first coding style:</p>
 
 <pre><code>var obj = {
@@ -482,7 +496,7 @@ suppress those you have to use <code>laxcomma</code> (see below).</p></td>
 };</code></pre></td>
 </tr>
 <tr>
-<td id='loopfunc' class='name'><a href='#loopfunc'>loopfunc</a></td>
+<td class='name' id='loopfunc'><a href='#loopfunc'>loopfunc</a></td>
 <td class='desc'><p>This option suppresses warnings about functions inside of loops. Defining
 functions inside of loops can lead to bugs such as this one:</p>
 
@@ -509,17 +523,17 @@ for (var i = 0; i &lt; 10; i++) {
 }</code></pre></td>
 </tr>
 <tr>
-<td id='moz' class='name'><a href='#moz'>moz</a></td>
+<td class='name' id='moz'><a href='#moz'>moz</a></td>
 <td class='desc'><p>This options tells JSHint that your code uses Mozilla JavaScript
 extensions. Unless you develop specifically for the Firefox web browser
 you don&#39;t need this option.</p>
 
 <p>More info:</p>
 
-<ul><li><a href='https://developer.mozilla.org/en-US/docs/JavaScript/New_in_JavaScript/1.7'>New in JavaScript 1.7</a></li></ul></td>
+<ul><li><a href="https://developer.mozilla.org/en-US/docs/JavaScript/New_in_JavaScript/1.7">New in JavaScript 1.7</a></li></ul></td>
 </tr>
 <tr>
-<td id='multistr' class='name'><a href='#multistr'>multistr</a></td>
+<td class='name' id='multistr'><a href='#multistr'>multistr</a></td>
 <td class='desc'><p>This option suppresses warnings about multi-line strings. Multi-line strings
 can be dangerous in JavaScript because all hell breaks loose if you accidentally
 put a whitespace in between the escape character (<code>\</code>) and a new line.</p>
@@ -540,32 +554,46 @@ text = &quot;Hello\
 World&quot;; // Warning, there is a space after \</code></pre></td>
 </tr>
 <tr>
-<td id='proto' class='name'><a href='#proto'>proto</a></td>
+<td class='name' id='notypeof'><a href='#notypeof'>notypeof</a></td>
+<td class='desc'><p>This option suppresses warnings about invalid <code>typeof</code> operator values.
+This operator has only <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof">a limited set of possible return values</a>.
+By default, JSHint warns when you compare its result with an invalid
+value which often can be a typo.</p>
+
+<pre><code>// &#39;fuction&#39; instead of &#39;function&#39;
+if (typeof a == &quot;fuction&quot;) { // Invalid typeof value &#39;fuction&#39;
+  /* ... */
+}</code></pre>
+
+<p>Do not use this option unless you&#39;re absolutely sure you don&#39;t want these checks.</p></td>
+</tr>
+<tr>
+<td class='name' id='proto'><a href='#proto'>proto</a></td>
 <td class='desc'><p>This option suppresses warnings about the <code>__proto__</code> property.</p></td>
 </tr>
 <tr>
-<td id='scripturl' class='name'><a href='#scripturl'>scripturl</a></td>
+<td class='name' id='scripturl'><a href='#scripturl'>scripturl</a></td>
 <td class='desc'><p>This option suppresses warnings about the use of script-targeted URLs—such as
 <code>javascript:...</code>.</p></td>
 </tr>
 <tr>
-<td id='smarttabs' class='name'><a href='#smarttabs'>smarttabs</a></td>
+<td class='name' id='smarttabs'><a href='#smarttabs'>smarttabs</a></td>
 <td class='desc'><p>This option suppresses warnings about mixed tabs and spaces when the latter are
 used for alignmnent only. The technique is called
-<a href='http://www.emacswiki.org/emacs/SmartTabs'>SmartTabs</a>.</p></td>
+<a href="http://www.emacswiki.org/emacs/SmartTabs">SmartTabs</a>.</p></td>
 </tr>
 <tr>
-<td id='shadow' class='name'><a href='#shadow'>shadow</a></td>
+<td class='name' id='shadow'><a href='#shadow'>shadow</a></td>
 <td class='desc'><p>This option suppresses warnings about variable shadowing i.e. declaring a
 variable that had been already declared somewhere in the outer scope.</p></td>
 </tr>
 <tr>
-<td id='sub' class='name'><a href='#sub'>sub</a></td>
+<td class='name' id='sub'><a href='#sub'>sub</a></td>
 <td class='desc'><p>This option suppresses warnings about using <code>[]</code> notation when it can be
 expressed in dot notation: <code>person[&#39;name&#39;]</code> vs. <code>person.name</code>.</p></td>
 </tr>
 <tr>
-<td id='supernew' class='name'><a href='#supernew'>supernew</a></td>
+<td class='name' id='supernew'><a href='#supernew'>supernew</a></td>
 <td class='desc'><p>This option suppresses warnings about &quot;weird&quot; constructions like
 <code>new function () { ... }</code> and <code>new Object;</code>. Such constructions are sometimes
 used to produce singletons in JavaScript:</p>
@@ -578,7 +606,7 @@ used to produce singletons in JavaScript:</p>
 };</code></pre></td>
 </tr>
 <tr>
-<td id='validthis' class='name'><a href='#validthis'>validthis</a></td>
+<td class='name' id='validthis'><a href='#validthis'>validthis</a></td>
 <td class='desc'><p>This option suppresses warnings about possible strict violations when the code
 is running in strict mode and you use <code>this</code> in a non-constructor function. You
 should use this option—in a function scope only—when you are positive that your
@@ -588,11 +616,13 @@ function using <code>Function.call</code>).</p>
 <p><strong>Note:</strong> This option can be used only inside of a function scope. JSHint will fail
 with an error if you will try to set this option globally.</p></td>
 </tr></table>
-<p><strong>Environments</strong></p>
 
-<p>These options pre-define global variables that are exposed by popular JavaScript libraries and runtime environments—such as browser or Node. Essentially they are shortcuts for explicit declarations like <code>/*global $:false, jQuery:false */</code>.</p>
+<h3>Environments</h3>
+
+<p>These options let JSHint know about some pre-defined global variables.</p>
+
 <table class='options table table-bordered table-striped'><tr>
-<td id='browser' class='name'><a href='#browser'>browser</a></td>
+<td class='name' id='browser'><a href='#browser'>browser</a></td>
 <td class='desc'><p>This option defines globals exposed by modern browsers: all the way from good
 old <code>document</code> and <code>navigator</code> to the HTML5 <code>FileReader</code> and other new
 developments in the browser world.</p>
@@ -601,87 +631,92 @@ developments in the browser world.</p>
 option <code>devel</code> for more information.</p></td>
 </tr>
 <tr>
-<td id='couch' class='name'><a href='#couch'>couch</a></td>
-<td class='desc'><p>This option defines globals exposed by <a href='http://couchdb.apache.org/'>CouchDB</a>.
+<td class='name' id='couch'><a href='#couch'>couch</a></td>
+<td class='desc'><p>This option defines globals exposed by <a href="http://couchdb.apache.org/">CouchDB</a>.
 CouchDB is a document-oriented database that can be queried and indexed in a
 MapReduce fashion using JavaScript.</p></td>
 </tr>
 <tr>
-<td id='devel' class='name'><a href='#devel'>devel</a></td>
+<td class='name' id='devel'><a href='#devel'>devel</a></td>
 <td class='desc'><p>This option defines globals that are usually used for logging poor-man&#39;s
 debugging: <code>console</code>, <code>alert</code>, etc. It is usually a good idea to not ship them
 in production because, for example, <code>console.log</code> breaks in legacy versions of
 Internet Explorer.</p></td>
 </tr>
 <tr>
-<td id='dojo' class='name'><a href='#dojo'>dojo</a></td>
-<td class='desc'><p>This option defines globals exposed by the <a href='http://dojotoolkit.org/'>Dojo Toolkit</a>.</p></td>
+<td class='name' id='dojo'><a href='#dojo'>dojo</a></td>
+<td class='desc'><p>This option defines globals exposed by the <a href="http://dojotoolkit.org/">Dojo Toolkit</a>.</p></td>
 </tr>
 <tr>
-<td id='jquery' class='name'><a href='#jquery'>jquery</a></td>
-<td class='desc'><p>This option defines globals exposed by the <a href='http://jquery.com/'>jQuery</a>
+<td class='name' id='jquery'><a href='#jquery'>jquery</a></td>
+<td class='desc'><p>This option defines globals exposed by the <a href="http://jquery.com/">jQuery</a>
 JavaScript library.</p></td>
 </tr>
 <tr>
-<td id='mootools' class='name'><a href='#mootools'>mootools</a></td>
-<td class='desc'><p>This option defines globals exposed by the <a href='http://mootools.net/'>MooTools</a>
+<td class='name' id='mootools'><a href='#mootools'>mootools</a></td>
+<td class='desc'><p>This option defines globals exposed by the <a href="http://mootools.net/">MooTools</a>
 JavaScript framework.</p></td>
 </tr>
 <tr>
-<td id='node' class='name'><a href='#node'>node</a></td>
+<td class='name' id='node'><a href='#node'>node</a></td>
 <td class='desc'><p>This option defines globals available when your code is running inside of the
-Node runtime environment. <a href='http://nodejs.org/'>Node.js</a> is a server-side
-JavaScript environment that uses an asynchronous event-driven model.</p></td>
+Node runtime environment. <a href="http://nodejs.org/">Node.js</a> is a server-side
+JavaScript environment that uses an asynchronous event-driven model. This option
+also skips some warnings that make sense in the browser environments but
+don&#39;t make sense in Node such as file-level <code>use strict</code> pragmas and <code>console.log</code>
+statements.</p></td>
 </tr>
 <tr>
-<td id='nonstandard' class='name'><a href='#nonstandard'>nonstandard</a></td>
+<td class='name' id='nonstandard'><a href='#nonstandard'>nonstandard</a></td>
 <td class='desc'><p>This option defines non-standard but widely adopted globals such as <code>escape</code> and
 <code>unescape</code>.</p></td>
 </tr>
 <tr>
-<td id='phantom' class='name'><a href='#phantom'>phantom</a></td>
+<td class='name' id='phantom'><a href='#phantom'>phantom</a></td>
 <td class='desc'><p>This option defines globals available when your core is running inside
-of the PhantomJS runtime environment. <a href='http://phantomjs.org/'>PhantomJS</a>
+of the PhantomJS runtime environment. <a href="http://phantomjs.org/">PhantomJS</a>
 is a headless WebKit scriptable with a JavaScript API. It has fast and native support
 for various web standards: DOM handling, CSS selector, JSON, Canvas, and SVG.</p></td>
 </tr>
 <tr>
-<td id='prototypejs' class='name'><a href='#prototypejs'>prototypejs</a></td>
-<td class='desc'><p>This option defines globals exposed by the <a href='http://www.prototypejs.org/'>Prototype</a>
+<td class='name' id='prototypejs'><a href='#prototypejs'>prototypejs</a></td>
+<td class='desc'><p>This option defines globals exposed by the <a href="http://www.prototypejs.org/">Prototype</a>
 JavaScript framework.</p></td>
 </tr>
 <tr>
-<td id='rhino' class='name'><a href='#rhino'>rhino</a></td>
+<td class='name' id='rhino'><a href='#rhino'>rhino</a></td>
 <td class='desc'><p>This option defines globals available when your code is running inside of the
-Rhino runtime environment. <a href='http://www.mozilla.org/rhino/'>Rhino</a> is an
+Rhino runtime environment. <a href="http://www.mozilla.org/rhino/">Rhino</a> is an
 open-source implementation of JavaScript written entirely in Java.</p></td>
 </tr>
 <tr>
-<td id='worker' class='name'><a href='#worker'>worker</a></td>
+<td class='name' id='worker'><a href='#worker'>worker</a></td>
 <td class='desc'><p>This option defines globals available when your code is running inside of a Web
-Worker. <a href='https://developer.mozilla.org/en/Using_web_workers'>Web Workers</a>
+Worker. <a href="https://developer.mozilla.org/en/Using_web_workers">Web Workers</a>
 provide a simple means for web content to run scripts in background threads.</p></td>
 </tr>
 <tr>
-<td id='wsh' class='name'><a href='#wsh'>wsh</a></td>
+<td class='name' id='wsh'><a href='#wsh'>wsh</a></td>
 <td class='desc'><p>This option defines globals available when your code is running as a script for
-the <a href='http://en.wikipedia.org/wiki/Windows_Script_Host'>Windows Script Host</a>.</p></td>
+the <a href="http://en.wikipedia.org/wiki/Windows_Script_Host">Windows Script Host</a>.</p></td>
 </tr>
 <tr>
-<td id='yui' class='name'><a href='#yui'>yui</a></td>
-<td class='desc'><p>This option defines globals exposed by the <a href='http://yuilibrary.com/'>YUI</a>
+<td class='name' id='yui'><a href='#yui'>yui</a></td>
+<td class='desc'><p>This option defines globals exposed by the <a href="http://yuilibrary.com/">YUI</a>
 JavaScript framework.</p></td>
 </tr></table>
-<p><strong>Legacy</strong></p>
 
-<p>These options are legacy from JSLint. Aside from bug fixes they will not be improved in any way and might be removed at any point.</p>
+<h3>Legacy</h3>
+
+<p>These options are deprecated and will be removed soon. DO NOT use them.</p>
+
 <table class='options table table-bordered table-striped'><tr>
-<td id='nomen' class='name'><a href='#nomen'>nomen</a></td>
+<td class='name' id='nomen'><a href='#nomen'>nomen</a></td>
 <td class='desc'><p>This option disallows the use of dangling <code>_</code> in variables. We don&#39;t know why
 would you need it.</p></td>
 </tr>
 <tr>
-<td id='onevar' class='name'><a href='#onevar'>onevar</a></td>
+<td class='name' id='onevar'><a href='#onevar'>onevar</a></td>
 <td class='desc'><p>This option allows only one <code>var</code> statement per function. Some people think
 that having a single var in a function, at the top of the function, helps
 readability. Example (taken from JSLint/JSHint source code):</p>
@@ -701,39 +736,51 @@ readability. Example (taken from JSLint/JSHint source code):</p>
 };</code></pre></td>
 </tr>
 <tr>
-<td id='passfail' class='name'><a href='#passfail'>passfail</a></td>
+<td class='name' id='passfail'><a href='#passfail'>passfail</a></td>
 <td class='desc'><p>This option makes JSHint stop on the first error or warning.</p></td>
 </tr>
 <tr>
-<td id='white' class='name'><a href='#white'>white</a></td>
+<td class='name' id='white'><a href='#white'>white</a></td>
 <td class='desc'><p>This option make JSHint check your source code against Douglas Crockford&#39;s
 JavaScript coding style. Unfortunately, his “The Good Parts” book aside, the
 actual rules are not very well documented.</p></td>
 </tr></table>
-					</div>
-			</div>
-		
+        </div>
 
-		<div class="footer">
-	<strong>JSHint</strong>, by JSHint Community. Created and maintained by
-		<a href="http://twitter.com/valueof">@valueof</a>.<br><a href="/blog">Blog</a> · <a href="https://github.com/jshint/jshint/">Code</a>
-</div>
+        <div class="col-md-4">
+          
 
-		<script>
-			var _gaq = _gaq || [];
-			_gaq.push(["_setAccount", "UA-126146-15"]);
-			_gaq.push(["_setDomainName", "jshint.com"]);
-			_gaq.push(["_trackPageview"]);
+          
+          <div class="ad">
+            <div id="carbonads-container">
+              <div class="carbonad">
+                <div id="azcarbon"></div>
+                <script type="text/javascript">
+                  var z = document.createElement("script");
+                  z.type = "text/javascript";
+                  z.async = true;
+                  z.src = "http://engine.carbonads.com/z/49189/azcarbon_2_1_0_HORIZ";
+                  var s = document.getElementsByTagName("script")[0];
+                  s.parentNode.insertBefore(z, s);
+                </script>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
 
-			(function () {
-				var ga = document.createElement("script");
-				ga.type = "text/javascript";
-				ga.async = true;
-				ga.src = "//www.google-analytics.com/ga.js";
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
 
-				var st = document.getElementsByTagName("script")[0];
-				st.parentNode.insertBefore(ga, st);
-			})();
-		</script>
-	</body>
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
 </html>
