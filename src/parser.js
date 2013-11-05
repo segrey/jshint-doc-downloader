@@ -40,14 +40,14 @@ function buildGroups($) {
       throw Error('Paragraph was expected');
     }
     var $title = $description.prev();
-    if (!$title.is('p')) {
+    if (!$title.is('h3')) {
       $title = $description;
       $description = null;
     }
     var title = $title.text();
     var description = $description != null ? $description.html() : groupDescriptions[title];
     if (!description) {
-      throw Error("No description for " + title);
+      throw Error('No description for ' + title);
     }
     var group = optionModel.createGroup(title, description);
     table.children('tr').each(function () {
@@ -87,6 +87,6 @@ function parse(body) {
 
 (function () {
   var optionsHtmlFilePath = util.getOptionsHtmlFilePath();
-  console.log("Reading " + optionsHtmlFilePath + "...");
+  console.log('Reading ' + optionsHtmlFilePath + '...');
   parse(util.readJSHintDocHtmlFileContent());
 }());
