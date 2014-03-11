@@ -120,6 +120,11 @@ originally warning for all empty blocks and we simply made it optional.
 There were no studies reporting that empty blocks in JavaScript break your code
 in any way.]]></description>
       </option>
+      <option key="nonbsp">
+        <description><![CDATA[This option warns about "non-breaking whitespace" characters. These characters
+can be entered with option-space on Mac computers and have a potential of
+breaking non-UTF8 web pages.]]></description>
+      </option>
       <option key="nonew">
         <description><![CDATA[This option prohibits the use of constructor functions for side-effects. Some
 people like to call constructor functions without assigning its result to any
@@ -343,6 +348,9 @@ scope.
             // No warning when funcscope:true
 }</code></pre>]]></description>
       </option>
+      <option key="gcl">
+        <description><![CDATA[This option makes JSHint compatible with Google Closure Compiler.]]></description>
+      </option>
       <option key="globalstrict">
         <description><![CDATA[This option suppresses warnings about the use of global strict mode. Global
 strict mode can break third-party widgets so it is not recommended.
@@ -401,6 +409,10 @@ for (var i = 0; i &lt; 10; i++) {
     };
   }(i));
 }</code></pre>]]></description>
+      </option>
+      <option key="maxerr">
+        <description><![CDATA[This options allows you to set the maximum amount of warnings JSHint will produce
+before giving up. Default is 50.]]></description>
       </option>
       <option key="moz">
         <description><![CDATA[This options tells JSHint that your code uses Mozilla JavaScript
@@ -485,6 +497,10 @@ function using <code>Function.call</code>).
 
 <p><strong>Note:</strong> This option can be used only inside of a function scope. JSHint will fail
 with an error if you will try to set this option globally.</p>]]></description>
+      </option>
+      <option key="noyield">
+        <description><![CDATA[This option suppresses warnings about generator functions with no <code>yield</code> statement
+in them.]]></description>
       </option>
     </options>
   </group>

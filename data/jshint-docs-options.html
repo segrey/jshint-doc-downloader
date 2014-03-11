@@ -81,7 +81,7 @@
 you should either <a href="https://github.com/jshint/jshint/issues/new">file a bug</a> or
 <a href="mailto:anton@kovalyov.net">email me</a>.</p>
 
-<h3>Enforcing options</h3>
+<h3><a class="anchor" href="#enforcing-options" name="enforcing-options">Enforcing options</a></h3>
 
 <p>When set to true, these options will make JSHint produce more warnings about your code.</p>
 
@@ -213,6 +213,12 @@ the use of <code>arguments.callee</code> in strict mode.</p></td>
 originally warning for all empty blocks and we simply made it optional.
 There were no studies reporting that empty blocks in JavaScript break your code
 in any way.</p></td>
+</tr>
+<tr>
+<td class='name' id='nonbsp'><a href='#nonbsp'>nonbsp</a></td>
+<td class='desc'><p>This option warns about &quot;non-breaking whitespace&quot; characters. These characters
+can be entered with option-space on Mac computers and have a potential of
+breaking non-UTF8 web pages.</p></td>
 </tr>
 <tr>
 <td class='name' id='nonew'><a href='#nonew'>nonew</a></td>
@@ -376,7 +382,7 @@ a program&#39;s source code. Read more about
 <td class='desc'><p>This option lets you set the maximum length of a line.</p></td>
 </tr></table>
 
-<h3>Relaxing options</h3>
+<h3><a class="anchor" href="#relaxing-options" name="relaxing-options">Relaxing options</a></h3>
 
 <p>When set to true, these options will make JSHint produce less warnings about your code.</p>
 
@@ -458,6 +464,10 @@ scope.</p>
 }</code></pre></td>
 </tr>
 <tr>
+<td class='name' id='gcl'><a href='#gcl'>gcl</a></td>
+<td class='desc'><p>This option makes JSHint compatible with Google Closure Compiler.</p></td>
+</tr>
+<tr>
 <td class='name' id='globalstrict'><a href='#globalstrict'>globalstrict</a></td>
 <td class='desc'><p>This option suppresses warnings about the use of global strict mode. Global
 strict mode can break third-party widgets so it is not recommended.</p>
@@ -521,6 +531,11 @@ for (var i = 0; i &lt; 10; i++) {
     };
   }(i));
 }</code></pre></td>
+</tr>
+<tr>
+<td class='name' id='maxerr'><a href='#maxerr'>maxerr</a></td>
+<td class='desc'><p>This options allows you to set the maximum amount of warnings JSHint will produce
+before giving up. Default is 50.</p></td>
 </tr>
 <tr>
 <td class='name' id='moz'><a href='#moz'>moz</a></td>
@@ -615,9 +630,14 @@ function using <code>Function.call</code>).</p>
 
 <p><strong>Note:</strong> This option can be used only inside of a function scope. JSHint will fail
 with an error if you will try to set this option globally.</p></td>
+</tr>
+<tr>
+<td class='name' id='noyield'><a href='#noyield'>noyield</a></td>
+<td class='desc'><p>This option suppresses warnings about generator functions with no <code>yield</code> statement
+in them.</p></td>
 </tr></table>
 
-<h3>Environments</h3>
+<h3><a class="anchor" href="#environments" name="environments">Environments</a></h3>
 
 <p>These options let JSHint know about some pre-defined global variables.</p>
 
@@ -706,7 +726,7 @@ the <a href="http://en.wikipedia.org/wiki/Windows_Script_Host">Windows Script Ho
 JavaScript framework.</p></td>
 </tr></table>
 
-<h3>Legacy</h3>
+<h3><a class="anchor" href="#legacy" name="legacy">Legacy</a></h3>
 
 <p>These options are deprecated and will be removed soon. DO NOT use them.</p>
 
@@ -745,6 +765,7 @@ readability. Example (taken from JSLint/JSHint source code):</p>
 JavaScript coding style. Unfortunately, his “The Good Parts” book aside, the
 actual rules are not very well documented.</p></td>
 </tr></table>
+
         </div>
 
         <div class="col-md-4">
