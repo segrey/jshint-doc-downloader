@@ -9,9 +9,8 @@
     <orderEntry type="library" name="Node.js v0.8.14 Core Modules" level="application" />
     <orderEntry type="library" name="Node.js v0.8.17 Core Modules" level="application" />
     <orderEntry type="library" name="Node.js v0.8.22 Core Modules" level="application" />
-    <orderEntry type="library" name="Node.js Dependencies for jshint-doc-downloader" level="project" />
     <orderEntry type="library" name="Node.js v0.8.21 Core Modules" level="application" />
     <orderEntry type="library" name="Node.js v0.10.17 Core Modules" level="application" />
+    <orderEntry type="library" name="jshint-doc-downloader node_modules" level="project" />
   </component>
 </module>
-
