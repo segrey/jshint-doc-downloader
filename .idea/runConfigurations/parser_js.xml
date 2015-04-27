@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="parser.js" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="$USER_HOME$/programs/nvm/v0.8.22/bin/node" path-to-js-file="./parser.js" working-dir="$PROJECT_DIR$/src">
+  <configuration default="false" name="parser.js" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="$USER_HOME$/.nvm/v0.10.38/bin/node" path-to-js-file="./parser.js" working-dir="$PROJECT_DIR$/src">
     <RunnerSettings RunnerId="NodeJS.debug" />
     <RunnerSettings RunnerId="NodeJS.run" />
     <ConfigurationWrapper RunnerId="NodeJS.debug" />

@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="downloader.js" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="$USER_HOME$/programs/nvm/v0.10.17/bin/node" path-to-js-file="downloader.js" working-dir="$PROJECT_DIR$/src">
+  <configuration default="false" name="downloader.js" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="$USER_HOME$/.nvm/v0.10.38/bin/node" path-to-js-file="downloader.js" working-dir="$PROJECT_DIR$/src">
     <RunnerSettings RunnerId="NodeJS.run" />
     <ConfigurationWrapper RunnerId="NodeJS.run" />
     <method />
